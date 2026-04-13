@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About Us — Trueline Africa UG Limited</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+/* ── ABOUT PAGE ── */
+.about-intro{padding:100px 60px;background:var(--navy)}
+.about-intro-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-intro-img{position:relative}
+.about-intro-img img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;display:block}
+.about-intro-img-2{position:absolute;bottom:-30px;right:-30px;width:55%;aspect-ratio:1;object-fit:cover;border:4px solid var(--navy);display:block}
+.about-years{position:absolute;top:20px;left:-20px;background:var(--or);padding:20px 22px;text-align:center}
+.about-years .n{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--white);line-height:1;display:block}
+.about-years .l{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.8);display:block}
+.about-intro-text h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.5rem);color:var(--white);letter-spacing:.03em;line-height:1;margin-bottom:20px}
+.about-intro-text h2 span{color:var(--or)}
+.about-intro-text p{font-size:.92rem;color:var(--muted);line-height:1.8;margin-bottom:16px}
+
+/* Mission/Vision */
+.mv-strip{
+  padding:80px 60px;
+  background:linear-gradient(135deg,var(--navy-d),var(--navy2));
+}
+.mv-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.mv-card{
+  background:rgba(255,255,255,.03);border:1px solid var(--border);
+  padding:44px 36px;position:relative;overflow:hidden;
+  transition:all .3s;
+}
+.mv-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--or);transform:scaleX(0);transition:transform .3s}
+.mv-card:hover::before{transform:scaleX(1)}
+.mv-card:hover{border-color:rgba(255,90,0,.25);background:rgba(255,90,0,.04)}
+.mv-icon{font-size:2rem;margin-bottom:20px;display:block}
+.mv-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.08em;color:var(--white);margin-bottom:14px}
+.mv-text{font-size:.88rem;color:var(--muted);line-height:1.75}
+
+/* Values */
+.values-section{padding:100px 60px;background:var(--navy)}
+.values-inner{max-width:1200px;margin:0 auto}
+.values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:56px}
+.val-card{
+  display:flex;gap:24px;padding:32px;
+  background:rgba(255,255,255,.025);border:1px solid var(--border);
+  transition:all .3s;
+}
+.val-card:hover{border-color:rgba(255,90,0,.3);background:rgba(255,90,0,.03);transform:translateX(4px)}
+.val-num{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:rgba(255,90,0,.15);line-height:1;flex-shrink:0;margin-top:-8px}
+.val-body{}
+.val-h{font-weight:800;color:var(--white);font-size:1rem;margin-bottom:8px}
+.val-d{font-size:.87rem;color:var(--muted);line-height:1.72}
+
+/* Director */
+.director-section{
+  padding:100px 60px;
+  background:linear-gradient(135deg,var(--navy2),var(--navy-d));
+  position:relative;overflow:hidden;
+}
+.director-section::after{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--or)}
+.director-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:340px 1fr;gap:70px;align-items:start}
+.dir-img-wrap{position:relative}
+.dir-img-wrap img{width:100%;object-fit:cover;object-position:top;display:block;filter:grayscale(15%)}
+.dir-award{
+  position:absolute;bottom:-1px;left:0;right:0;
+  background:var(--or);padding:14px 20px;
+  display:flex;align-items:center;gap:10px;
+}
+.dir-award .trophy{font-size:1.3rem}
+.dir-award .award-text{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--white);line-height:1.3}
+.dir-content{padding-top:10px}
+.dir-bigquote{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.2rem);color:var(--white);line-height:1.05;letter-spacing:.03em;margin-bottom:24px;position:relative;padding-left:30px}
+.dir-bigquote::before{content:'"';position:absolute;left:-10px;top:-10px;font-size:8rem;color:rgba(255,90,0,.1);line-height:1;font-family:'Bebas Neue',sans-serif}
+.dir-content p{font-size:.9rem;color:var(--muted);line-height:1.8;margin-bottom:14px}
+.dir-name-block{margin-top:32px;display:flex;align-items:center;gap:16px;padding-top:24px;border-top:1px solid var(--border)}
+.dir-name-block img{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:top}
+.dir-name{font-weight:800;color:var(--white);font-size:.95rem}
+.dir-role{font-size:.78rem;color:var(--or);margin-top:2px}
+
+/* Team photo */
+.team-section{padding:80px 60px;background:var(--navy-d)}
+.team-inner{max-width:1200px;margin:0 auto}
+.team-photo-grid{display:grid;grid-template-columns:2fr 1fr;gap:3px;margin-top:50px}
+.team-photo-grid img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:16/9;filter:brightness(.85);transition:filter .3s}
+.team-photo-grid img:hover{filter:brightness(1)}
+.team-photo-grid .tall{aspect-ratio:3/4}
+
+/* Clients full */
+.clients-full{padding:100px 60px;background:var(--navy)}
+.clients-full-inner{max-width:1200px;margin:0 auto}
+.clients-full-grid{
+  display:grid;grid-template-columns:repeat(6,1fr);
+  border:1px solid var(--border);margin-top:50px;
+}
+.client-box{
+  padding:22px 18px;display:flex;align-items:center;justify-content:center;
+  border-right:1px solid var(--border);border-bottom:1px solid var(--border);
+  transition:background .2s;min-height:80px;
+}
+.client-box:hover{background:rgba(255,90,0,.06)}
+.client-box img{max-width:100px;max-height:38px;object-fit:contain;filter:grayscale(100%) brightness(180%);opacity:.3;transition:all .3s;width:100%}
+.client-box:hover img{filter:none;opacity:1}
+
+@media(max-width:900px){
+  .about-intro,.mv-strip,.values-section,.director-section,.team-section,.clients-full{padding:70px 22px}
+  .about-intro-inner,.director-inner{grid-template-columns:1fr}
+  .about-intro-img-2{display:none}
+  .about-years{left:0}
+  .mv-inner{grid-template-columns:1fr}
+  .values-grid{grid-template-columns:1fr}
+  .clients-full-grid{grid-template-columns:repeat(3,1fr)}
+  .team-photo-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="https://truelineafrica.com/wp-content/uploads/2025/01/trueline-01-1.png" alt="Trueline Africa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="logo-fallback" style="display:none"><div class="logo-icon">T</div><div class="logo-text">Trueline<span>Africa</span></div></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <a href="tel:+256393106571" class="nav-phone">+256 393 106 571</a>
+    <a href="contact.html" class="nav-cta">Get Quote</a>
+    <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About Us</a>
+  <a href="services.html">Our Services</a><a href="careers.html">Careers</a>
+  <a href="faq.html">FAQ</a><a href="contact.html">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero" style="--bg-img:url('https://truelineafrica.com/wp-content/uploads/2025/01/aerial-view-cargo-ship-with-cargo-container-sea-scaled-e1736761470187.jpg')">
+  <div class="page-hero-inner">
+    <div class="section-tag">Who We Are</div>
+    <h1>About <span>Us</span></h1>
+    <div class="breadcrumb"><a href="index.html">Home</a> / <span>About Us</span></div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="about-intro">
+  <div class="about-intro-inner">
+    <div class="about-intro-img reveal">
+      <div class="about-years"><span class="n">14</span><span class="l">Years<br>Experience</span></div>
+      <img src="https://truelineafrica.com/wp-content/uploads/2025/01/aerial-view-cargo-ship-with-cargo-container-sea-scaled-e1736761470187.jpg" alt="Cargo Ship"/>
+      <img class="about-intro-img-2" src="https://truelineafrica.com/wp-content/uploads/2025/01/IMG-20240825-WA0019-1024x768.jpg" alt="Trueline Team"/>
+    </div>
+    <div class="about-intro-text">
+      <div class="section-tag">Founded 2011</div>
+      <h2>Customise Your<br><span>Logistics Experience</span></h2>
+      <p>Trueline Africa Limited is a licensed East African Authorised Economic Operator (AEO) that delivers dependable customs clearance and forwarding services across the region.</p>
+      <p>As a customer-centric transport and logistics provider, we offer a wide range of freight forwarding solutions for both imports and exports to and from East Africa, connecting the region to global markets.</p>
+      <p>Our expertise spans air, land, and sea freight, managing various types of shipments including less than container load (LCL), full container load (FCL), out-of-gauge, break bulk, and heavy lift — from virtually any origin to any destination with any carrier.</p>
+      <div style="display:flex;gap:14px;margin-top:32px;flex-wrap:wrap">
+        <a href="contact.html" class="btn-primary">Get a Quote →</a>
+        <a href="https://truelineafrica.com/wp-content/uploads/2025/02/TRUELINE-AFRICA-2025-FINAL.pdf" target="_blank" class="btn-outline">Download Profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION / VISION / CITIZENSHIP -->
+<section class="mv-strip">
+  <div style="max-width:1200px;margin:0 auto;margin-bottom:50px">
+    <div class="section-tag">Our Blueprint</div>
+    <h2 class="section-h">What Drives <span>Us</span></h2>
+  </div>
+  <div class="mv-inner" style="max-width:1200px;margin:0 auto">
+    <div class="mv-card reveal">
+      <span class="mv-icon">🎯</span>
+      <div class="mv-title">Our Mission</div>
+      <p class="mv-text">To build impactful partnerships with customers, employees, suppliers, and communities — delivering comprehensive, efficient shipping solutions with local expertise and global reach.</p>
+    </div>
+    <div class="mv-card reveal">
+      <span class="mv-icon">🌍</span>
+      <div class="mv-title">Our Vision</div>
+      <p class="mv-text">To be the most customer-centric logistics and freight forwarding company in Africa — connecting the continent to global markets through innovation and integrity.</p>
+    </div>
+    <div class="mv-card reveal">
+      <span class="mv-icon">🤝</span>
+      <div class="mv-title">Corporate Citizenship</div>
+      <p class="mv-text">We recognise our ethical and moral responsibility to the communities and environment where we operate. We continuously review our policies to have a net positive impact.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section">
+  <div class="values-inner">
+    <div class="section-tag">Our Core Values</div>
+    <h2 class="section-h">The Principles That <span>Guide Us</span></h2>
+    <div class="values-grid">
+      <div class="val-card reveal"><div class="val-num">01</div><div class="val-body"><div class="val-h">Customer Success</div><div class="val-d">We are committed to delivering high-quality services efficiently and effectively. We continuously evaluate and refine our processes to create new and better opportunities for our customers.</div></div></div>
+      <div class="val-card reveal"><div class="val-num">02</div><div class="val-body"><div class="val-h">People First</div><div class="val-d">We foster a positive and inclusive culture that celebrates and embraces diversity for open, honest, and meaningful relationships across our entire team.</div></div></div>
+      <div class="val-card reveal"><div class="val-num">03</div><div class="val-body"><div class="val-h">Innovation</div><div class="val-d">We constantly challenge ourselves and explore new ways and process improvements to meet our stakeholders' needs in an ever-changing logistics landscape.</div></div></div>
+      <div class="val-card reveal"><div class="val-num">04</div><div class="val-body"><div class="val-h">Integrity</div><div class="val-d">We conduct business with transparency and accountability, building long-term value for our customers, stakeholders, and our company through every interaction.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTOR -->
+<section class="director-section">
+  <div class="director-inner">
+    <div class="dir-img-wrap reveal">
+      <img src="https://truelineafrica.com/wp-content/uploads/2025/02/nkusi-2-870x1024.jpg" alt="Elijah Nkusi — Managing Director"/>
+      <div class="dir-award"><div class="trophy">🏆</div><div class="award-text">Award Winning<br>Logistics Excellence</div></div>
+    </div>
+    <div class="dir-content reveal">
+      <div class="section-tag">Message from the Director</div>
+      <div class="dir-bigquote">Great Teams Make It Happen</div>
+      <p>When you work alone, you might be hesitant to put your neck on the line. When you work on a team, you know you have the support of the entire group to fall back on in case of failure.</p>
+      <p>In the fast-paced world of logistics, teamwork is the unsung hero that keeps our operations running smoothly. At Trueline Africa, we rely on seamless collaboration between departments to ensure timely deliveries, accurate inventory management, and exceptional customer service.</p>
+      <p>When our teams combine their strengths, we overcome obstacles, develop innovative solutions, and achieve significant growth. This collaborative spirit fuels our commitment to serving our customers better. I am so grateful for our teams' dedication and commitment.</p>
+      <div class="dir-name-block">
+        <img src="https://truelineafrica.com/wp-content/uploads/2025/02/nkusi-2-870x1024.jpg" alt="Elijah Nkusi"/>
+        <div><div class="dir-name">Elijah Nkusi</div><div class="dir-role">Managing Director, Trueline Africa UG Limited</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM PHOTO -->
+<section class="team-section">
+  <div class="team-inner">
+    <div class="section-tag">Our Team</div>
+    <h2 class="section-h">The People <span>Behind Us</span></h2>
+    <div class="team-photo-grid">
+      <img src="https://truelineafrica.com/wp-content/uploads/2025/02/trueline-scaled.jpg" alt="Trueline Africa Team" style="aspect-ratio:16/9"/>
+      <img class="tall" src="https://truelineafrica.com/wp-content/uploads/2025/01/IMG-20240825-WA0019-1024x768.jpg" alt="Award Ceremony" style="aspect-ratio:4/5"/>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients-full">
+  <div class="clients-full-inner">
+    <div class="section-tag">Our Clients</div>
+    <h2 class="section-h">We Work with <span>Big Brands</span></h2>
+    <div class="clients-full-grid">
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/nation_media_group_logo-e1736935697961.jpeg" alt="Nation Media"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/kyagulanyi.jpeg" alt="Kyagalanyi Coffee"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/CMA-CGM-KENYA-LTD-1024x372.jpeg" alt="CMA CGM"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/bgh.png" alt="BGH"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/Raxio-at-1024x407.png" alt="Raxio"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/Agrivetis-Logo-1024x873.png" alt="Agrivest"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/Hariss.png" alt="Hariss"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/logo_kakira.png" alt="Kakira Sugar"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/02/aggreko-logo-300x157.jpg" alt="Aggreko"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/tiva.png" alt="Tiva"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/freshp.png" alt="Fresh Produce"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/02/EOA-LogoLockup.png" alt="EOA"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/lg-4.png" alt="LG"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/mille-e1736936259248.jpeg" alt="Mille"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/frazers-300x105.jpeg" alt="Frazers"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/02/Blowplast.jpeg" alt="Blowplast"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/jes-e1737006969966.png" alt="JES"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/vet-e1737006943155.jpeg" alt="Vet"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/radi.jpeg" alt="Radi"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/02/crownw-01.jpg" alt="Crown"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/graphic-systems-uganda-ltd1.png" alt="Graphic Systems"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/biplous_u_ltd_logo.jpeg" alt="Biplous"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/02/hjeje-e1738931413676.png" alt="Client"/></div>
+      <div class="client-box reveal"><img src="https://truelineafrica.com/wp-content/uploads/2025/01/hjkw.png" alt="Client"/></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col-wide">
+        <img src="https://truelineafrica.com/wp-content/uploads/2025/01/truelineW-01.png" alt="Trueline Africa" class="footer-logo" onerror="this.style.display='none'"/>
+        <p class="footer-desc">We provide dependable and cost-effective logistics solutions tailored to our clients' unique requirements through strategic partnerships with a global network of independent freight forwarders.</p>
+        <div class="footer-social"><a href="#">Li</a><a href="#">Tw</a><a href="#">Fb</a><a href="#">Yt</a></div>
+      </div>
+      <div><div class="footer-h">Quick Links</div><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Our Services</a><a href="careers.html">Careers</a><a href="faq.html">FAQ</a><a href="contact.html">Contact Us</a></div></div>
+      <div><div class="footer-h">Working Hours</div><div class="footer-hours"><div><span>Mon – Fri</span><span>8:30 – 17:00</span></div><div><span>Saturday</span><span>9:00 – 12:00</span></div><div><span>Sunday</span><span>Closed</span></div></div></div>
+      <div><div class="footer-h">Head Office</div><div class="footer-contact"><p>📍 Plot 1, Church Road, Ntinda, Kampala</p><p>📞 <a href="tel:+256393106571">+256 393 106 571</a></p><p>✉️ <a href="mailto:enquiries@truelineafrica.com">enquiries@truelineafrica.com</a></p></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Trueline Africa UG Limited. All Rights Reserved.</span><span>Redesigned in <em>Kampala 🇺🇬</em></span></div>
+  </div>
+</footer>
+<script src="shared.js"></script>
+</body>
+</html>

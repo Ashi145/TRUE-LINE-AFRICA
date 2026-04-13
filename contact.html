@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact Us — Trueline Africa UG Limited</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.contact-section{padding:100px 60px;background:var(--navy)}
+.contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:70px}
+
+/* Office Cards */
+.offices-section{padding:80px 60px;background:linear-gradient(135deg,var(--navy-d),var(--navy2))}
+.offices-inner{max-width:1200px;margin:0 auto}
+.offices-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
+.office-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--border);
+  padding:32px 26px;
+  position:relative;
+  transition:all .3s;
+  overflow:hidden;
+}
+.office-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--or);transform:scaleX(0);transition:transform .3s}
+.office-card:hover::before{transform:scaleX(1)}
+.office-card:hover{border-color:rgba(255,90,0,.3);transform:translateY(-4px)}
+.office-flag{font-size:2rem;margin-bottom:16px;display:block}
+.office-city{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.1em;color:var(--white);margin-bottom:14px}
+.office-detail{font-size:.83rem;color:var(--muted);line-height:1.8}
+.office-detail strong{color:var(--white);display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;color:var(--or)}
+.office-detail p{margin-bottom:10px}
+.office-detail a{color:var(--muted);text-decoration:none;transition:color .2s}
+.office-detail a:hover{color:var(--or)}
+
+/* Form */
+.contact-form-wrap{}
+.contact-form-wrap h2{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:.04em;color:var(--white);line-height:1;margin-bottom:10px}
+.contact-form-wrap h2 span{color:var(--or)}
+.contact-form-wrap p{font-size:.9rem;color:var(--muted);line-height:1.7;margin-bottom:32px}
+.cform{display:flex;flex-direction:column;gap:14px}
+.cform-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cform input,.cform select,.cform textarea{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border);
+  border-radius:0;
+  padding:14px 18px;
+  color:var(--white);
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;
+  outline:none;transition:border-color .2s;width:100%;
+}
+.cform input::placeholder,.cform textarea::placeholder{color:var(--muted)}
+.cform input:focus,.cform select:focus,.cform textarea:focus{border-color:var(--or);background:rgba(255,90,0,.04)}
+.cform select option{background:var(--navy2);color:var(--white)}
+.cform textarea{resize:vertical;min-height:100px}
+.cform-submit{
+  background:var(--or);color:var(--white);border:none;
+  padding:16px 32px;font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:700;font-size:.95rem;letter-spacing:.04em;
+  cursor:pointer;transition:all .22s;display:flex;align-items:center;gap:8px;
+}
+.cform-submit:hover{background:var(--or2);transform:translateY(-2px);box-shadow:0 10px 28px rgba(255,90,0,.4)}
+
+/* Contact info sidebar */
+.contact-info-side{}
+.contact-info-side h2{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:.04em;color:var(--white);line-height:1;margin-bottom:10px}
+.contact-info-side h2 span{color:var(--or)}
+.cia-items{display:flex;flex-direction:column;gap:0;margin-top:36px}
+.cia-item{
+  display:flex;gap:20px;padding:24px 0;
+  border-bottom:1px solid var(--border);
+  align-items:flex-start;
+}
+.cia-item:last-child{border-bottom:none}
+.cia-icon{
+  width:50px;height:50px;flex-shrink:0;
+  background:rgba(255,90,0,.1);border:1px solid rgba(255,90,0,.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+}
+.cia-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--or);font-weight:700;margin-bottom:6px}
+.cia-val{font-size:.9rem;color:var(--white);font-weight:600;line-height:1.5}
+.cia-sub{font-size:.8rem;color:var(--muted);margin-top:3px}
+.cia-val a{color:var(--white);text-decoration:none;transition:color .2s}
+.cia-val a:hover{color:var(--or)}
+
+/* Map placeholder */
+.map-section{padding:0;background:var(--navy-d)}
+.map-placeholder{
+  width:100%;height:380px;
+  background:linear-gradient(135deg,var(--navy-d),var(--navy2));
+  display:flex;align-items:center;justify-content:center;
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+  font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.1em;color:var(--muted);
+}
+.map-placeholder img{width:100%;height:100%;object-fit:cover;opacity:.3;position:absolute;inset:0}
+.map-overlay-text{position:relative;z-index:2;text-align:center}
+.map-overlay-text .big{font-size:3rem;display:block;color:var(--or);margin-bottom:8px}
+
+@media(max-width:900px){
+  .contact-section,.offices-section{padding:70px 22px}
+  .contact-inner{grid-template-columns:1fr}
+  .offices-grid{grid-template-columns:1fr 1fr}
+  .cform-row{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .offices-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="https://truelineafrica.com/wp-content/uploads/2025/01/trueline-01-1.png" alt="Trueline Africa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="logo-fallback" style="display:none"><div class="logo-icon">T</div><div class="logo-text">Trueline<span>Africa</span></div></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Our Services</a></li><li><a href="careers.html">Careers</a></li>
+      <li><a href="faq.html">FAQ</a></li><li><a href="contact.html" class="active">Contact Us</a></li>
+    </ul>
+    <a href="tel:+256393106571" class="nav-phone">+256 393 106 571</a>
+    <a href="contact.html" class="nav-cta">Get Quote</a>
+    <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About Us</a>
+  <a href="services.html">Our Services</a><a href="careers.html">Careers</a>
+  <a href="faq.html">FAQ</a><a href="contact.html">Contact Us</a>
+</div>
+
+<div class="page-hero" style="--bg-img:url('https://truelineafrica.com/wp-content/uploads/2025/01/aerial-view-cargo-ship-cargo-container-harbor-scaled.jpg')">
+  <div class="page-hero-inner">
+    <div class="section-tag">Get In Touch</div>
+    <h1>Contact <span>Us</span></h1>
+    <div class="breadcrumb"><a href="index.html">Home</a> / <span>Contact Us</span></div>
+  </div>
+</div>
+
+<!-- OFFICES -->
+<section class="offices-section">
+  <div class="offices-inner">
+    <div class="section-tag">Our Locations</div>
+    <h2 class="section-h">Four Countries, <span>One Standard</span></h2>
+    <div class="offices-grid">
+      <div class="office-card reveal">
+        <span class="office-flag">🇺🇬</span>
+        <div class="office-city">Kampala</div>
+        <div class="office-detail">
+          <strong>Address</strong>
+          <p>Plot 1, Church Road, Ntinda, Kampala – Uganda</p>
+          <strong>Phone</strong>
+          <p><a href="tel:+256393106571">+256 393 106 571</a></p>
+          <strong>Email</strong>
+          <p><a href="mailto:enquiries@truelineafrica.com">enquiries@truelineafrica.com</a></p>
+        </div>
+      </div>
+      <div class="office-card reveal">
+        <span class="office-flag">🇺🇬</span>
+        <div class="office-city">Malaba</div>
+        <div class="office-detail">
+          <strong>Address</strong>
+          <p>Plot 36-38, Chegeren Road, Malaba Town Council – Uganda</p>
+          <strong>Phone</strong>
+          <p><a href="tel:+256393106571">+256 393 106 571</a></p>
+          <strong>Email</strong>
+          <p><a href="mailto:enquiries@truelineafrica.com">enquiries@truelineafrica.com</a></p>
+        </div>
+      </div>
+      <div class="office-card reveal">
+        <span class="office-flag">🇸🇸</span>
+        <div class="office-city">Juba</div>
+        <div class="office-detail">
+          <strong>Address</strong>
+          <p>Plot 49, Unity Suite 10, Garmen Building Hai Malakal Opp. Equity Bank – South Sudan</p>
+          <strong>Phone</strong>
+          <p><a href="tel:+211923021115">+211 923 021 115</a></p>
+          <strong>Email</strong>
+          <p><a href="mailto:info@truelineafrica.com">info@truelineafrica.com</a></p>
+        </div>
+      </div>
+      <div class="office-card reveal">
+        <span class="office-flag">🇰🇪</span>
+        <div class="office-city">Mombasa</div>
+        <div class="office-detail">
+          <strong>Address</strong>
+          <p>Unit N5.01, 5th Floor North Tower, Mombasa Trade Centre Ltd – Kenya</p>
+          <strong>Phone</strong>
+          <p><a href="tel:+254797102985">+254 797 102 985</a></p>
+          <strong>Email</strong>
+          <p><a href="mailto:enquiries@truelineafrica.com">enquiries@truelineafrica.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM + INFO -->
+<section class="contact-section">
+  <div class="contact-inner">
+    <!-- Form -->
+    <div>
+      <div class="section-tag">Send a Message</div>
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:.04em;color:var(--white);line-height:1;margin-bottom:10px">Talk to Us or <span style="color:var(--or)">Get a Quote</span></h2>
+      <p style="font-size:.9rem;color:var(--muted);margin-bottom:30px;line-height:1.7">Fill in the form below and our team will get back to you within 2 hours during business hours.</p>
+      <div class="cform">
+        <div class="cform-row">
+          <input type="text" placeholder="Full Name *" required/>
+          <input type="email" placeholder="Email Address *" required/>
+        </div>
+        <div class="cform-row">
+          <input type="tel" placeholder="Phone Number *"/>
+          <input type="text" placeholder="Company Name"/>
+        </div>
+        <select>
+          <option value="" disabled selected>Service Required</option>
+          <option>Air Freight</option>
+          <option>Ocean Freight</option>
+          <option>Road &amp; Rail Freight</option>
+          <option>Warehousing &amp; Distribution</option>
+          <option>Customs Clearance</option>
+          <option>Cargo Insurance</option>
+          <option>Project Cargo</option>
+          <option>General Inquiry</option>
+        </select>
+        <div class="cform-row">
+          <input type="text" placeholder="Pickup / Origin Location"/>
+          <input type="text" placeholder="Delivery / Destination"/>
+        </div>
+        <div class="cform-row">
+          <input type="text" placeholder="Cargo Weight (kg/tons)"/>
+          <input type="text" placeholder="Volume (m³/CBM)"/>
+        </div>
+        <textarea placeholder="Describe your cargo and any additional requirements..."></textarea>
+        <button class="cform-submit" onclick="this.textContent='✓ Message Sent! We\'ll be in touch.';this.style.background='#006B3C';this.disabled=true">
+          Submit Request →
+        </button>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="contact-info-side">
+      <div class="section-tag">Direct Contact</div>
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:.04em;color:var(--white);line-height:1;margin-bottom:10px">We're Here <span style="color:var(--or)">for You</span></h2>
+      <div class="cia-items">
+        <div class="cia-item reveal">
+          <div class="cia-icon">📞</div>
+          <div>
+            <div class="cia-label">Phone (Uganda)</div>
+            <div class="cia-val"><a href="tel:+256393106571">+256 393 106 571</a></div>
+            <div class="cia-sub">Available Mon–Fri 8:30–17:00</div>
+          </div>
+        </div>
+        <div class="cia-item reveal">
+          <div class="cia-icon">📞</div>
+          <div>
+            <div class="cia-label">Phone (Kenya)</div>
+            <div class="cia-val"><a href="tel:+254797102985">+254 797 102 985</a></div>
+            <div class="cia-sub">Mombasa Trade Centre</div>
+          </div>
+        </div>
+        <div class="cia-item reveal">
+          <div class="cia-icon">✉️</div>
+          <div>
+            <div class="cia-label">Email</div>
+            <div class="cia-val"><a href="mailto:enquiries@truelineafrica.com">enquiries@truelineafrica.com</a></div>
+            <div class="cia-sub">Responses within 2 hours</div>
+          </div>
+        </div>
+        <div class="cia-item reveal">
+          <div class="cia-icon">📍</div>
+          <div>
+            <div class="cia-label">Head Office</div>
+            <div class="cia-val">Plot 1, Church Road, Ntinda</div>
+            <div class="cia-sub">Kampala, Uganda</div>
+          </div>
+        </div>
+        <div class="cia-item reveal">
+          <div class="cia-icon">🕐</div>
+          <div>
+            <div class="cia-label">Business Hours</div>
+            <div class="cia-val">Mon – Fri: 8:30 – 17:00</div>
+            <div class="cia-sub">Saturday: 9:00 – 12:00 · Sunday: Closed</div>
+          </div>
+        </div>
+      </div>
+      <!-- Flags -->
+      <div style="margin-top:36px;padding:24px;background:rgba(255,255,255,.03);border:1px solid var(--border)">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.12em;color:var(--muted);margin-bottom:16px">WE OPERATE IN</div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+          <img src="https://truelineafrica.com/wp-content/uploads/2025/01/Flag_of_Uganda.svg-2.png" alt="Uganda" style="height:24px;object-fit:contain"/>
+          <img src="https://truelineafrica.com/wp-content/uploads/2025/01/Flag-Sudan-768x384.jpg" alt="South Sudan" style="height:24px;object-fit:contain"/>
+          <img src="https://truelineafrica.com/wp-content/uploads/2025/01/images-23.png" alt="Kenya" style="height:24px;object-fit:contain"/>
+          <span style="font-size:.8rem;color:var(--muted)">+ Global Network</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col-wide">
+        <img src="https://truelineafrica.com/wp-content/uploads/2025/01/truelineW-01.png" alt="Trueline Africa" class="footer-logo" onerror="this.style.display='none'"/>
+        <p class="footer-desc">Dependable and cost-effective logistics solutions tailored to our clients' unique requirements through a global network of freight forwarders.</p>
+        <div class="footer-social"><a href="#">Li</a><a href="#">Tw</a><a href="#">Fb</a><a href="#">Yt</a></div>
+      </div>
+      <div><div class="footer-h">Quick Links</div><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Our Services</a><a href="careers.html">Careers</a><a href="faq.html">FAQ</a><a href="contact.html">Contact Us</a></div></div>
+      <div><div class="footer-h">Working Hours</div><div class="footer-hours"><div><span>Mon – Fri</span><span>8:30 – 17:00</span></div><div><span>Saturday</span><span>9:00 – 12:00</span></div><div><span>Sunday</span><span>Closed</span></div></div></div>
+      <div><div class="footer-h">Head Office</div><div class="footer-contact"><p>📍 Plot 1, Church Road, Ntinda, Kampala</p><p>📞 <a href="tel:+256393106571">+256 393 106 571</a></p><p>✉️ <a href="mailto:enquiries@truelineafrica.com">enquiries@truelineafrica.com</a></p></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Trueline Africa UG Limited. All Rights Reserved.</span><span>Redesigned in <em>Kampala 🇺🇬</em></span></div>
+  </div>
+</footer>
+<script src="shared.js"></script>
+</body>
+</html>

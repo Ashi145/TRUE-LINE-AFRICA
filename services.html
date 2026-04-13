@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Our Services — Trueline Africa UG Limited</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.services-main{padding:100px 60px;background:var(--navy)}
+.services-main-inner{max-width:1200px;margin:0 auto}
+.svc-full-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:60px}
+
+.svc-full-card{
+  position:relative;overflow:hidden;
+  background:var(--navy2);
+  display:grid;grid-template-columns:280px 1fr;
+  transition:all .3s;
+  border:1px solid var(--border);
+}
+.svc-full-card:hover{border-color:rgba(255,90,0,.3)}
+.svc-full-card:hover .sfc-img img{transform:scale(1.05)}
+.sfc-img{overflow:hidden;position:relative}
+.sfc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block;min-height:260px}
+.sfc-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(12,26,48,.6))}
+.sfc-body{padding:36px 32px;display:flex;flex-direction:column;justify-content:center}
+.sfc-num{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:rgba(255,90,0,.15);line-height:1;margin-bottom:8px}
+.sfc-name{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.05em;color:var(--white);margin-bottom:12px}
+.sfc-desc{font-size:.86rem;color:var(--muted);line-height:1.75;margin-bottom:20px}
+.sfc-points{display:flex;flex-direction:column;gap:6px;margin-bottom:22px}
+.sfc-point{font-size:.8rem;color:var(--text);display:flex;align-items:center;gap:8px}
+.sfc-point::before{content:'✓';color:var(--or);font-weight:800;font-size:.75rem;flex-shrink:0}
+.sfc-link{font-size:.78rem;font-weight:700;color:var(--or);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:gap .2s}
+.sfc-link:hover{gap:10px}
+
+/* Extra services row */
+.extra-services{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  max-width:1200px;margin:60px auto 0;
+}
+.extra-card{
+  background:rgba(255,255,255,.025);border:1px solid var(--border);
+  padding:36px;transition:all .3s;position:relative;overflow:hidden;
+}
+.extra-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--or);transform:scaleX(0);transition:transform .3s}
+.extra-card:hover::after{transform:scaleX(1)}
+.extra-card:hover{border-color:rgba(255,90,0,.25);background:rgba(255,90,0,.03)}
+.extra-icon{font-size:2rem;margin-bottom:18px;display:block}
+.extra-name{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.06em;color:var(--white);margin-bottom:10px}
+.extra-desc{font-size:.85rem;color:var(--muted);line-height:1.7}
+
+/* How section */
+.how-section{padding:100px 60px;background:linear-gradient(135deg,var(--navy-d),var(--navy2))}
+.how-inner{max-width:1200px;margin:0 auto}
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px}
+.how-step{
+  padding:40px 30px;border-right:1px solid var(--border);
+  position:relative;
+  transition:all .3s;
+}
+.how-step:last-child{border-right:none}
+.how-step:hover{background:rgba(255,90,0,.04)}
+.how-step::before{
+  content:attr(data-step);
+  position:absolute;top:24px;right:24px;
+  font-family:'Bebas Neue',sans-serif;font-size:4rem;color:rgba(255,90,0,.08);line-height:1;
+}
+.how-step-icon{font-size:1.8rem;margin-bottom:20px;display:block}
+.how-step-title{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:.06em;color:var(--white);margin-bottom:10px}
+.how-step-desc{font-size:.84rem;color:var(--muted);line-height:1.7}
+
+@media(max-width:900px){
+  .services-main,.how-section{padding:70px 22px}
+  .svc-full-grid{grid-template-columns:1fr}
+  .svc-full-card{grid-template-columns:1fr}
+  .sfc-img{height:200px}
+  .sfc-img img{min-height:200px}
+  .extra-services{grid-template-columns:1fr;margin-left:22px;margin-right:22px}
+  .how-grid{grid-template-columns:1fr 1fr}
+  .how-step{border-right:none;border-bottom:1px solid var(--border)}
+}
+</style>
+</head>
+<body>
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="https://truelineafrica.com/wp-content/uploads/2025/01/trueline-01-1.png" alt="Trueline Africa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="logo-fallback" style="display:none"><div class="logo-icon">T</div><div class="logo-text">Trueline<span>Africa</span></div></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li>
+      <li><a href="services.html" class="active">Our Services</a></li><li><a href="careers.html">Careers</a></li>
+      <li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <a href="tel:+256393106571" class="nav-phone">+256 393 106 571</a>
+    <a href="contact.html" class="nav-cta">Get Quote</a>
+    <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About Us</a>
+  <a href="services.html">Our Services</a><a href="careers.html">Careers</a>
+  <a href="faq.html">FAQ</a><a href="contact.html">Contact Us</a>
+</div>
+
+<div class="page-hero" style="--bg-img:url('https://truelineafrica.com/wp-content/uploads/2020/03/services_img02.jpg')">
+  <div class="page-hero-inner">
+    <div class="section-tag">What We Offer</div>
+    <h1>Our <span>Services</span></h1>
+    <div class="breadcrumb"><a href="index.html">Home</a> / <span>Our Services</span></div>
+  </div>
+</div>
+
+<section class="services-main">
+  <div class="services-main-inner">
+    <div class="section-tag">Core Services</div>
+    <h2 class="section-h">Freight Solutions <span>Tailored for You</span></h2>
+    <div class="svc-full-grid">
+      <!-- Air Freight -->
+      <div class="svc-full-card reveal">
+        <div class="sfc-img"><img src="https://truelineafrica.com/wp-content/uploads/2020/03/services_img03.jpg" alt="Air Freight"/></div>
+        <div class="sfc-body">
+          <div class="sfc-num">01</div>
+          <div class="sfc-name">Air Freight</div>
+          <p class="sfc-desc">Fast, reliable air cargo solutions for time-sensitive shipments. Suitable for perishables, pharmaceuticals, and high-value goods.</p>
+          <div class="sfc-points">
+            <div class="sfc-point">Perishable &amp; temperature-sensitive goods</div>
+            <div class="sfc-point">Pharmaceutical &amp; healthcare cargo</div>
+            <div class="sfc-point">Express and priority shipping</div>
+            <div class="sfc-point">Global airport network</div>
+          </div>
+          <a href="contact.html" class="sfc-link">Request Air Freight Quote →</a>
+        </div>
+      </div>
+      <!-- Ocean Freight -->
+      <div class="svc-full-card reveal">
+        <div class="sfc-img"><img src="https://truelineafrica.com/wp-content/uploads/2020/03/services_img02.jpg" alt="Ocean Freight"/></div>
+        <div class="sfc-body">
+          <div class="sfc-num">02</div>
+          <div class="sfc-name">Ocean Freight</div>
+          <p class="sfc-desc">Cost-effective sea freight solutions for large volumes. FCL and LCL options connecting Africa to the world's major ports.</p>
+          <div class="sfc-points">
+            <div class="sfc-point">Full Container Load (FCL)</div>
+            <div class="sfc-point">Less than Container Load (LCL)</div>
+            <div class="sfc-point">Break bulk &amp; out-of-gauge cargo</div>
+            <div class="sfc-point">Heavy lift shipments</div>
+          </div>
+          <a href="contact.html" class="sfc-link">Request Ocean Freight Quote →</a>
+        </div>
+      </div>
+      <!-- Road & Rail -->
+      <div class="svc-full-card reveal">
+        <div class="sfc-img"><img src="https://truelineafrica.com/wp-content/uploads/2020/03/services_img01.jpg" alt="Road & Rail Freight"/></div>
+        <div class="sfc-body">
+          <div class="sfc-num">03</div>
+          <div class="sfc-name">Road &amp; Rail Freight</div>
+          <p class="sfc-desc">Extensive road and rail networks across East &amp; Central Africa. Reliable, GPS-tracked, and secure door-to-door delivery.</p>
+          <div class="sfc-points">
+            <div class="sfc-point">General &amp; bulk cargo transport</div>
+            <div class="sfc-point">Hazardous materials handling</div>
+            <div class="sfc-point">Heavy machinery &amp; automobiles</div>
+            <div class="sfc-point">Real-time GPS tracking</div>
+          </div>
+          <a href="contact.html" class="sfc-link">Request Road &amp; Rail Quote →</a>
+        </div>
+      </div>
+      <!-- Warehousing -->
+      <div class="svc-full-card reveal">
+        <div class="sfc-img"><img src="https://staging.goldhawkltd.com/trueline/wp-content/uploads/2025/01/warew-01-scaled.jpg" alt="Warehousing"/></div>
+        <div class="sfc-body">
+          <div class="sfc-num">04</div>
+          <div class="sfc-name">Warehousing &amp; Distribution</div>
+          <p class="sfc-desc">Modern warehousing and distribution services with real-time inventory management and secure storage facilities across Uganda.</p>
+          <div class="sfc-points">
+            <div class="sfc-point">Short and long-term storage</div>
+            <div class="sfc-point">Inventory management systems</div>
+            <div class="sfc-point">Pick, pack &amp; distribution</div>
+            <div class="sfc-point">Temperature-controlled options</div>
+          </div>
+          <a href="contact.html" class="sfc-link">Request Warehousing Quote →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Extra services -->
+  <div class="extra-services">
+    <div class="extra-card reveal">
+      <span class="extra-icon">📋</span>
+      <div class="extra-name">Customs Clearance</div>
+      <p class="extra-desc">Expert customs documentation and compliance management across all major East African entry and exit points. Minimise delays and ensure full regulatory compliance.</p>
+      <a href="contact.html" class="sfc-link" style="margin-top:18px">Get Started →</a>
+    </div>
+    <div class="extra-card reveal">
+      <span class="extra-icon">🛡️</span>
+      <div class="extra-name">Cargo Insurance</div>
+      <p class="extra-desc">Comprehensive cargo insurance coverage for all shipment types. Protect your goods against loss, damage, and theft throughout the entire supply chain journey.</p>
+      <a href="contact.html" class="sfc-link" style="margin-top:18px">Get Started →</a>
+    </div>
+    <div class="extra-card reveal">
+      <span class="extra-icon">🏗️</span>
+      <div class="extra-name">Project Cargo</div>
+      <p class="extra-desc">Specialised logistics management for oversized, heavy-lift, or complex project cargo requirements. Complete project coordination from origin to final destination.</p>
+      <a href="contact.html" class="sfc-link" style="margin-top:18px">Get Started →</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="how-inner">
+    <div class="section-tag">How We Work</div>
+    <h2 class="section-h">Requirements for <span>a Quote</span></h2>
+    <div class="how-grid">
+      <div class="how-step reveal" data-step="01">
+        <span class="how-step-icon">📦</span>
+        <div class="how-step-title">Cargo Details</div>
+        <p class="how-step-desc">What type of cargo needs to be transported? Different cargo types require different handling and transport methods. Share all relevant details.</p>
+      </div>
+      <div class="how-step reveal" data-step="02">
+        <span class="how-step-icon">⚖️</span>
+        <div class="how-step-title">Volume &amp; Weight</div>
+        <p class="how-step-desc">The size and weight of your shipment determines transportation costs. Accurate measurements help us provide the most competitive pricing.</p>
+      </div>
+      <div class="how-step reveal" data-step="03">
+        <span class="how-step-icon">📍</span>
+        <div class="how-step-title">Pickup &amp; Destination</div>
+        <p class="how-step-desc">Exact pickup and delivery locations are vital in determining the transport route and cost. We serve all major corridors in East and Central Africa.</p>
+      </div>
+      <div class="how-step reveal" data-step="04">
+        <span class="how-step-icon">🗓️</span>
+        <div class="how-step-title">Expected Timeline</div>
+        <p class="how-step-desc">Your expected pickup and delivery timeline helps us plan the optimal route and mode of transport to meet your deadlines efficiently.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:50px">
+      <a href="contact.html" class="btn-primary" style="font-size:1rem;padding:16px 36px">Get a Free Quote Now →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col-wide">
+        <img src="https://truelineafrica.com/wp-content/uploads/2025/01/truelineW-01.png" alt="Trueline Africa" class="footer-logo" onerror="this.style.display='none'"/>
+        <p class="footer-desc">Dependable and cost-effective logistics solutions tailored to our clients' unique requirements — through strategic partnerships with a global network of freight forwarders.</p>
+        <div class="footer-social"><a href="#">Li</a><a href="#">Tw</a><a href="#">Fb</a><a href="#">Yt</a></div>
+      </div>
+      <div><div class="footer-h">Quick Links</div><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Our Services</a><a href="careers.html">Careers</a><a href="faq.html">FAQ</a><a href="contact.html">Contact Us</a></div></div>
+      <div><div class="footer-h">Working Hours</div><div class="footer-hours"><div><span>Mon – Fri</span><span>8:30 – 17:00</span></div><div><span>Saturday</span><span>9:00 – 12:00</span></div><div><span>Sunday</span><span>Closed</span></div></div></div>
+      <div><div class="footer-h">Head Office</div><div class="footer-contact"><p>📍 Plot 1, Church Road, Ntinda, Kampala</p><p>📞 <a href="tel:+256393106571">+256 393 106 571</a></p><p>✉️ <a href="mailto:enquiries@truelineafrica.com">enquiries@truelineafrica.com</a></p></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Trueline Africa UG Limited. All Rights Reserved.</span><span>Redesigned in <em>Kampala 🇺🇬</em></span></div>
+  </div>
+</footer>
+<script src="shared.js"></script>
+</body>
+</html>

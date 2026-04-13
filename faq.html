@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>FAQ — Trueline Africa UG Limited</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.faq-section{padding:100px 60px;background:var(--navy)}
+.faq-inner{max-width:900px;margin:0 auto}
+.faq-list{margin-top:60px;display:flex;flex-direction:column;gap:0}
+.faq-item{
+  border-bottom:1px solid var(--border);
+  overflow:hidden;
+}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:28px 0;cursor:pointer;transition:color .2s;
+}
+.faq-q:hover .faq-q-text{color:var(--or)}
+.faq-q-num{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.15em;color:var(--or);flex-shrink:0;width:32px}
+.faq-q-text{font-weight:700;color:var(--white);font-size:1rem;line-height:1.4;flex:1}
+.faq-toggle{
+  width:32px;height:32px;flex-shrink:0;
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;color:var(--or);
+  transition:all .3s;background:rgba(255,90,0,.06);
+}
+.faq-item.open .faq-toggle{background:var(--or);color:var(--white);border-color:var(--or);transform:rotate(45deg)}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height .4s ease, padding .3s;
+  padding-left:52px;
+}
+.faq-item.open .faq-a{max-height:300px;padding-bottom:24px}
+.faq-a p{font-size:.9rem;color:var(--muted);line-height:1.8}
+
+/* CTA bottom */
+.faq-cta{padding:100px 60px;background:linear-gradient(135deg,var(--navy-d),var(--navy2));text-align:center}
+.faq-cta-inner{max-width:600px;margin:0 auto}
+.faq-cta h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--white);letter-spacing:.04em;margin-bottom:16px}
+.faq-cta h2 span{color:var(--or)}
+.faq-cta p{font-size:.95rem;color:var(--muted);line-height:1.7;margin-bottom:32px}
+
+@media(max-width:900px){
+  .faq-section,.faq-cta{padding:70px 22px}
+}
+</style>
+</head>
+<body>
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="https://truelineafrica.com/wp-content/uploads/2025/01/trueline-01-1.png" alt="Trueline Africa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="logo-fallback" style="display:none"><div class="logo-icon">T</div><div class="logo-text">Trueline<span>Africa</span></div></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Our Services</a></li><li><a href="careers.html">Careers</a></li>
+      <li><a href="faq.html" class="active">FAQ</a></li><li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <a href="tel:+256393106571" class="nav-phone">+256 393 106 571</a>
+    <a href="contact.html" class="nav-cta">Get Quote</a>
+    <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About Us</a>
+  <a href="services.html">Our Services</a><a href="careers.html">Careers</a>
+  <a href="faq.html">FAQ</a><a href="contact.html">Contact Us</a>
+</div>
+
+<div class="page-hero" style="--bg-img:url('https://truelineafrica.com/wp-content/uploads/2020/03/services_img01.jpg')">
+  <div class="page-hero-inner">
+    <div class="section-tag">Got Questions?</div>
+    <h1>Frequently Asked <span>Questions</span></h1>
+    <div class="breadcrumb"><a href="index.html">Home</a> / <span>FAQ</span></div>
+  </div>
+</div>
+
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="section-tag">Get Answers</div>
+    <h2 class="section-h">Have Any <span>Query?</span></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-num">01</span>
+          <span class="faq-q-text">What types of goods can be transported via road and rail freight?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a"><p>Road and rail freight services from Trueline Africa are versatile, capable of transporting a diverse range of goods. These services can accommodate different types of cargo, considering factors such as the goods' nature, distance, urgency, packaging material and cost. Examples include general cargo, perishable goods, hazardous materials, bulk goods, automobiles, and household goods for road freight, as well as bulk goods, intermodal containers, heavy machinery, oil and gas, wood products, and manufactured goods for rail freight.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-num">02</span>
+          <span class="faq-q-text">How do you ensure the safety and security of goods during transit?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a"><p>Trueline Africa employs various measures to ensure the safety and security of goods during transit, including proper packaging and labeling, cargo securing, GPS tracking systems, seals and locks, security personnel, careful route planning, insurance coverage, and detailed cargo inspection and documentation.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-num">03</span>
+          <span class="faq-q-text">Is it possible to ship perishable items via air freight?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a"><p>Yes, air freight is a suitable mode of transportation for perishable items, including food, pharmaceuticals, and other temperature-sensitive goods. Our team is experienced in handling all necessary cold chain requirements and documentation for perishable shipments.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-num">04</span>
+          <span class="faq-q-text">What are the benefits of using multimodal transportation services?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a"><p>Multimodal transportation services offer cost efficiency, risk mitigation, flexibility, and sustainability benefits for logistics and supply chain management. This approach can result in shorter transit times, reduced costs, and enhanced cargo security by combining various modes of transport such as air, sea, road, and rail in a single shipment.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-num">05</span>
+          <span class="faq-q-text">How do you ensure timely delivery with multimodal transportation?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a"><p>Timely delivery with multimodal transportation is ensured through meticulous route planning, real-time tracking, and proactive communication with logistics partners. Technology, contingency planning, and streamlined transshipment processes further contribute to meeting delivery deadlines across various transportation modes.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-num">06</span>
+          <span class="faq-q-text">Can I use different transport modes for a single shipment?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a"><p>Yes, a single shipment can utilise various transport modes such as road, rail, sea, and air — known as multimodal transportation. This approach offers efficient and cost-effective logistics solutions, often resulting in shorter transit times and reduced shipping costs. We handle all coordination between modes seamlessly.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-num">07</span>
+          <span class="faq-q-text">Can I store my goods with Trueline Africa temporarily?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a"><p>Yes, Trueline Africa provides warehousing and storage solutions as part of its services. We offer both short-term and long-term storage options with full inventory management, security, and distribution capabilities.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-num">08</span>
+          <span class="faq-q-text">Why choose Trueline Africa for my logistics needs?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a"><p>Trueline Africa has the ability to provide comprehensive and efficient shipping solutions across the globe, with local expertise and support in each region to ensure smooth and reliable service. As a licensed AEO (Authorised Economic Operator) with over 14 years of experience and offices in Uganda, South Sudan, and Kenya, we bring unmatched regional knowledge and a proven track record of excellence.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-cta">
+  <div class="faq-cta-inner">
+    <div class="section-tag" style="justify-content:center">Still Have Questions?</div>
+    <h2>We'd Love to <span>Hear From You</span></h2>
+    <p>Our expert team is ready to answer any questions you may have and help you find the right logistics solution for your needs.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="contact.html" class="btn-primary">Make an Inquiry →</a>
+      <a href="tel:+256393106571" class="btn-outline">Call Us Now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col-wide">
+        <img src="https://truelineafrica.com/wp-content/uploads/2025/01/truelineW-01.png" alt="Trueline Africa" class="footer-logo" onerror="this.style.display='none'"/>
+        <p class="footer-desc">Dependable logistics solutions tailored to our clients' unique requirements through a global network of freight forwarders.</p>
+        <div class="footer-social"><a href="#">Li</a><a href="#">Tw</a><a href="#">Fb</a><a href="#">Yt</a></div>
+      </div>
+      <div><div class="footer-h">Quick Links</div><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Our Services</a><a href="careers.html">Careers</a><a href="faq.html">FAQ</a><a href="contact.html">Contact Us</a></div></div>
+      <div><div class="footer-h">Working Hours</div><div class="footer-hours"><div><span>Mon – Fri</span><span>8:30 – 17:00</span></div><div><span>Saturday</span><span>9:00 – 12:00</span></div><div><span>Sunday</span><span>Closed</span></div></div></div>
+      <div><div class="footer-h">Head Office</div><div class="footer-contact"><p>📍 Plot 1, Church Road, Ntinda, Kampala</p><p>📞 <a href="tel:+256393106571">+256 393 106 571</a></p><p>✉️ <a href="mailto:enquiries@truelineafrica.com">enquiries@truelineafrica.com</a></p></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Trueline Africa UG Limited. All Rights Reserved.</span><span>Redesigned in <em>Kampala 🇺🇬</em></span></div>
+  </div>
+</footer>
+<script src="shared.js"></script>
+<script>
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
